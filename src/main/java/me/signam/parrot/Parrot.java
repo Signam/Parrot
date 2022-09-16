@@ -31,11 +31,8 @@ public class Parrot {
                 final Message message = event.getMessage();
                 if (configUtils.getInputChannel().equals(message.getChannelId().asString())) {
 
-                    System.out.println(message.getContent());
 
                     final Guild guild = message.getGuild().block();
-
-
                     if (!event.getMessage().getContent().equals(""))
                         guild.getChannelById(Snowflake.of(configUtils.getOutputChannel())).block().getRestChannel()
                                 .createMessage(event.getMessage().getContent()).block();
