@@ -42,5 +42,5 @@ jobs:
           prerelease: true
           title: Build
           files: |
-            Parrot/target/Parrot-1.0-SNAPSHOT-jar-with-dependencies.jar
+            target/Parrot-1.0-SNAPSHOT-jar-with-dependencies.jar
       
