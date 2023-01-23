@@ -40,7 +40,7 @@ jobs:
           repo_token: '${{ secrets.GITHUB_TOKEN }}'
           automatic_release_tag: latest
           prerelease: true
-          title: Build
+          title: Dev Build
           files: |
             target/Parrot-1.0-SNAPSHOT-jar-with-dependencies.jar
       
