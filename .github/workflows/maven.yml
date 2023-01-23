@@ -31,4 +31,3 @@ jobs:
       with:
           name: Parrot
           path: target/Parrot-1.0-SNAPSHOT-jar-with-dependencies.jar
-    - name: Release
