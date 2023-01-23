@@ -29,13 +29,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn clean install
-    - name: Release
-      uses: marvinpinto/action-automatic-releases@latest
+    - name: Upload Parrot.jar
+      uses: actions/upload-artifact@v2
       with:
-          repo_token: '${{ secrets.GITHUB_TOKEN }}'
-          automatic_release_tag: latest
-          prerelease: true
-          title: Dev Build
-          files: |
-            target/Parrot-1.0-SNAPSHOT-jar-with-dependencies.jar
-      
+          name: Parrot
+          path: target/Parrot-1.0-SNAPSHOT-jar-with-dependencies.jar
