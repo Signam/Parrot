@@ -25,16 +25,19 @@ public class Parrot {
 
 
                     final Guild guild = message.getGuild().block();
-                    if (!event.getMessage().getContent().equals(""))
+                    if (!event.getMessage().getContent().equals("") && !event.getMessage().getContent().equals("Message has been sent to channel <#" + configUtils.getOutputChannel() + ">")) {
+                        guild.getChannelById(Snowflake.of(configUtils.getInputChannel())).block().getRestChannel()
+                                .createMessage("Message has been sent to channel <#" + configUtils.getOutputChannel() + ">").block();
                         guild.getChannelById(Snowflake.of(configUtils.getOutputChannel())).block().getRestChannel()
                                 .createMessage(event.getMessage().getContent()).block();
 
-                    event.getMessage().getData().attachments().forEach(attachmentData -> {
-                        guild.getChannelById(Snowflake.of(configUtils.getOutputChannel())).block().getRestChannel()
-                                .createMessage(attachmentData.url()).block();
-                    });
+                        event.getMessage().getData().attachments().forEach(attachmentData -> {
+                            guild.getChannelById(Snowflake.of(configUtils.getOutputChannel())).block().getRestChannel()
+                                    .createMessage(attachmentData.url()).block();
 
+                        });
 
+                    }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
