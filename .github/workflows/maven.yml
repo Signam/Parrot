@@ -29,12 +29,10 @@ jobs:
       with:
           name: Parrot
           path: target/Parrot-1.0-SNAPSHOT-jar-with-dependencies.jar
-    - name: Release      
-      uses: "marvinpinto/action-automatic-releases@latest"
-      with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: true
-          title: "Development Build"
+    - uses: "marvinpinto/action-automatic-releases@latest"
+      with: 
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        title: "Dev Build"
+        automatic_release_tag: "latest"
           files: |
             ./target/Parrot-1.0-SNAPSHOT-jar-with-dependencies.jar
