@@ -22,12 +22,17 @@ public class Parrot {
             try {
                 final Message message = event.getMessage();
                 if (configUtils.getInputChannel().equals(message.getChannelId().asString())) {
-
-
                     final Guild guild = message.getGuild().block();
                     if (!event.getMessage().getContent().equals("") && !event.getMessage().getContent().equals("Message has been sent to channel <#" + configUtils.getOutputChannel() + ">")) {
-                        guild.getChannelById(Snowflake.of(configUtils.getInputChannel())).block().getRestChannel()
-                                .createMessage("Message has been sent to channel <#" + configUtils.getOutputChannel() + ">").block();
+                        System.out.println("Debug Mode:" + configUtils.isDebugMode());
+                        if (configUtils.isDebugMode()) {
+
+
+                            guild.getChannelById(Snowflake.of(configUtils.getInputChannel())).block().getRestChannel()
+                                    .createMessage("Message has been sent to channel <#" + configUtils.getOutputChannel() + ">").block();
+                        } else {
+
+                        }
                         guild.getChannelById(Snowflake.of(configUtils.getOutputChannel())).block().getRestChannel()
                                 .createMessage(event.getMessage().getContent()).block();
 
