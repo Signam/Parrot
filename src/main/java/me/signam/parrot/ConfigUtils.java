@@ -2,12 +2,7 @@ package me.signam.parrot;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Properties;
 
 public class ConfigUtils {
@@ -47,5 +42,9 @@ public class ConfigUtils {
         return properties.get("output.channel").toString();
     }
 
-
+    //option to toggle debug mode
+    public boolean isDebugMode() {
+        return Boolean.parseBoolean(properties.getProperty("debug", "false"));
+    }
 }
+
