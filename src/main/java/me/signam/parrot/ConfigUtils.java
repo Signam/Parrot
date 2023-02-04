@@ -46,5 +46,9 @@ public class ConfigUtils {
     public boolean isDebugMode() {
         return Boolean.parseBoolean(properties.getProperty("debug", "false"));
     }
+
+    public String getBotID() {
+        return properties.get("bot.id").toString();
+    }
 }
 
