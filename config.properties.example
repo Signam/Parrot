@@ -6,4 +6,4 @@ output.channel=
 #option to toggle debug mode
 debug=
 #bot ID
-bot_id=
+bot.id=
