@@ -1,5 +1,5 @@
-[![.github/workflows/maven.yml](https://github.com/CaptainRexPL/Parrot/actions/workflows/maven.yml/badge.svg)](https://github.com/CaptainRexPL/Parrot/actions/workflows/maven.yml)
-<img src="https://img.shields.io/github/downloads/CaptainRexPL/Parrot/total" alt="Downloads">
+[![.github/workflows/maven.yml](https://github.com/Signam/Parrot/actions/workflows/maven.yml/badge.svg)](https://github.com/Signam/Parrot/actions/workflows/maven.yml)
+<img src="https://img.shields.io/github/downloads/Signam/Parrot/total" alt="Downloads">
 # Parrot
 A bot for relaying messages from one channel to another
 
